@@ -5,6 +5,9 @@ namespace App\Controller\Admin;
 use App\Entity\Conference;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 
 class ConferenceCrudController extends AbstractCrudController
 {
@@ -26,13 +29,9 @@ class ConferenceCrudController extends AbstractCrudController
 						// the visible title at the top of the page and the content of the <title> element
 						// it can include these placeholders: %entity_id%, %entity_label_singular%, %entity_label_plural%
 						->setPageTitle('index', '%entity_label_plural% listing')
-
-						// the help message displayed to end users (it can contain HTML tags)
-						->setHelpMessage('edit', '... ogo - go ...')
 				;
 		}
 
-    /*
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -41,5 +40,4 @@ class ConferenceCrudController extends AbstractCrudController
             TextEditorField::new('description'),
         ];
     }
-    */
 }
