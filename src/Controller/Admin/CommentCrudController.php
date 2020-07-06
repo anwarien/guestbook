@@ -5,9 +5,12 @@ namespace App\Controller\Admin;
 use App\Entity\Comment;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -40,9 +43,12 @@ class CommentCrudController extends AbstractCrudController
     {
         return [
             //IdField::new('id'),
+            AssociationField::new('conference'),
             TextField::new('author'),
-						TextEditorField::new('text'),
-						EmailField::new('email')
+            TextEditorField::new('text'),
+            EmailField::new('email'),
+            DateTimeField::new('createdAt'),
+            ImageField::new('photo_filename')
         ];
 	}
 		
