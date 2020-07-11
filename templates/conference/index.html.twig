@@ -10,10 +10,8 @@
 
 <div class="example-wrapper">
     <h1>Hello, give your feedback! ✅</h1>
-
     {% for conference in conferences%}
 		<h4><a href="{{ path('conference', { id: conference.id }) }}">{{ conference }}</a></h4>
 	{% endfor %}
-
 </div>
 {% endblock %}
