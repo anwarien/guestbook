@@ -5,5 +5,8 @@ easy_admin:
             class: App\Entity\Conference
         Comment: 
             class: App\Entity\Comment
+            form:
+              fields:
+                - {property: 'photoFile', type: 'VichImageType'}
         User: 
             class: App\Entity\User
